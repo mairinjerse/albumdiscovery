@@ -1,49 +1,272 @@
 [
-  { "artist": "Taylor Swift", "album": "1989", "tier": "mainstream", "image": null },
-  { "artist": "Beyoncé", "album": "Renaissance", "tier": "mainstream", "image": null },
-  { "artist": "Kendrick Lamar", "album": "good kid, m.A.A.d city", "tier": "mainstream", "image": null },
-  { "artist": "Adele", "album": "25", "tier": "mainstream", "image": null },
-  { "artist": "Drake", "album": "Take Care", "tier": "mainstream", "image": null },
-  { "artist": "Billie Eilish", "album": "When We All Fall Asleep, Where Do We Go?", "tier": "mainstream", "image": null },
-  { "artist": "The Beatles", "album": "Abbey Road", "tier": "mainstream", "image": null },
-  { "artist": "Fleetwood Mac", "album": "Rumours", "tier": "mainstream", "image": null },
-  { "artist": "Michael Jackson", "album": "Thriller", "tier": "mainstream", "image": null },
-  { "artist": "Radiohead", "album": "OK Computer", "tier": "mainstream", "image": null },
-  { "artist": "Coldplay", "album": "A Rush of Blood to the Head", "tier": "mainstream", "image": null },
-  { "artist": "Rihanna", "album": "Anti", "tier": "mainstream", "image": null },
-  { "artist": "Ed Sheeran", "album": "÷ (Divide)", "tier": "mainstream", "image": null },
-  { "artist": "Amy Winehouse", "album": "Back to Black", "tier": "mainstream", "image": null },
-  { "artist": "Daft Punk", "album": "Random Access Memories", "tier": "mainstream", "image": null },
-
-  { "artist": "Mk.gee", "album": "Two Star & The Dream Police", "tier": "growing", "image": null },
-  { "artist": "Fontaines D.C.", "album": "Skinty Fia", "tier": "growing", "image": null },
-  { "artist": "Wet Leg", "album": "Wet Leg", "tier": "growing", "image": null },
-  { "artist": "Black Country, New Road", "album": "Ants From Up There", "tier": "growing", "image": null },
-  { "artist": "Ezra Collective", "album": "Where I'm Meant to Be", "tier": "growing", "image": null },
-  { "artist": "Yaeji", "album": "With a Hammer", "tier": "growing", "image": null },
-  { "artist": "Nilüfer Yanya", "album": "Miss Universe", "tier": "growing", "image": null },
-  { "artist": "Overmono", "album": "Good Lies", "tier": "growing", "image": null },
-  { "artist": "Sudan Archives", "album": "Natural Brown Prom Queen", "tier": "growing", "image": null },
-  { "artist": "Loyle Carner", "album": "Hugo", "tier": "growing", "image": null },
-  { "artist": "Little Simz", "album": "Sometimes I Might Be Introvert", "tier": "growing", "image": null },
-  { "artist": "Tirzah", "album": "Devotion", "tier": "growing", "image": null },
-  { "artist": "Caribou", "album": "Suddenly", "tier": "growing", "image": null },
-  { "artist": "Cleo Sol", "album": "Mother", "tier": "growing", "image": null },
-  { "artist": "Yussef Dayes", "album": "Black Classical Music", "tier": "growing", "image": null },
-
-  { "artist": "Nala Sinephro", "album": "Space 1.8", "tier": "obscure", "image": null },
-  { "artist": "Loraine James", "album": "Reflection", "tier": "obscure", "image": null },
-  { "artist": "Space Afrika", "album": "Honest Labour", "tier": "obscure", "image": null },
-  { "artist": "Iceboy Violet", "album": "The Vanity Project", "tier": "obscure", "image": null },
-  { "artist": "Ana Roxanne", "album": "Because of a Flower", "tier": "obscure", "image": null },
-  { "artist": "Patricia Brennan", "album": "Maquishti", "tier": "obscure", "image": null },
-  { "artist": "Circuit des Yeux", "album": "-io", "tier": "obscure", "image": null },
-  { "artist": "Klein", "album": "Lifetime", "tier": "obscure", "image": null },
-  { "artist": "Actress", "album": "Splazsh", "tier": "obscure", "image": null },
-  { "artist": "Julia Reidy", "album": "Vanish", "tier": "obscure", "image": null },
-  { "artist": "Ellen Arkbro", "album": "CHORDS", "tier": "obscure", "image": null },
-  { "artist": "claire rousay", "album": "a heavenly touch", "tier": "obscure", "image": null },
-  { "artist": "Aho Ssan", "album": "Rhizomes", "tier": "obscure", "image": null },
-  { "artist": "Ex-Easter Island Head", "album": "Norther", "tier": "obscure", "image": null },
-  { "artist": "Grouper", "album": "Ruins", "tier": "obscure", "image": null }
+  {
+    "artist": "Taylor Swift",
+    "album": "1989",
+    "tier": "mainstream",
+    "image": null
+  },
+  {
+    "artist": "Beyoncé",
+    "album": "Renaissance",
+    "tier": "mainstream",
+    "image": null
+  },
+  {
+    "artist": "Kendrick Lamar",
+    "album": "good kid, m.A.A.d city",
+    "tier": "mainstream",
+    "image": null
+  },
+  {
+    "artist": "Adele",
+    "album": "25",
+    "tier": "mainstream",
+    "image": null
+  },
+  {
+    "artist": "Drake",
+    "album": "Take Care",
+    "tier": "mainstream",
+    "image": null
+  },
+  {
+    "artist": "Billie Eilish",
+    "album": "When We All Fall Asleep, Where Do We Go?",
+    "tier": "mainstream",
+    "image": null
+  },
+  {
+    "artist": "The Beatles",
+    "album": "Abbey Road",
+    "tier": "mainstream",
+    "image": null
+  },
+  {
+    "artist": "Fleetwood Mac",
+    "album": "Rumours",
+    "tier": "mainstream",
+    "image": null
+  },
+  {
+    "artist": "Michael Jackson",
+    "album": "Thriller",
+    "tier": "mainstream",
+    "image": null
+  },
+  {
+    "artist": "Radiohead",
+    "album": "OK Computer",
+    "tier": "mainstream",
+    "image": null
+  },
+  {
+    "artist": "Coldplay",
+    "album": "A Rush of Blood to the Head",
+    "tier": "mainstream",
+    "image": null
+  },
+  {
+    "artist": "Rihanna",
+    "album": "Anti",
+    "tier": "mainstream",
+    "image": null
+  },
+  {
+    "artist": "Ed Sheeran",
+    "album": "÷ (Divide)",
+    "tier": "mainstream",
+    "image": null
+  },
+  {
+    "artist": "Amy Winehouse",
+    "album": "Back to Black",
+    "tier": "mainstream",
+    "image": null
+  },
+  {
+    "artist": "Daft Punk",
+    "album": "Random Access Memories",
+    "tier": "mainstream",
+    "image": null
+  },
+  {
+    "artist": "Mk.gee",
+    "album": "Two Star & The Dream Police",
+    "tier": "growing",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/4bb223c47d37d3ec76eddbfc7cb87b1a.jpg"
+  },
+  {
+    "artist": "Fontaines D.C.",
+    "album": "Skinty Fia",
+    "tier": "growing",
+    "image": null
+  },
+  {
+    "artist": "Wet Leg",
+    "album": "Wet Leg",
+    "tier": "growing",
+    "image": null
+  },
+  {
+    "artist": "Black Country, New Road",
+    "album": "Ants From Up There",
+    "tier": "growing",
+    "image": null
+  },
+  {
+    "artist": "Ezra Collective",
+    "album": "Where I'm Meant to Be",
+    "tier": "growing",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/cd584495ef8336d06f7961522ab2b4a2.jpg"
+  },
+  {
+    "artist": "Yaeji",
+    "album": "With a Hammer",
+    "tier": "growing",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/1df9c4d71653f3bb17d6f3a13913de52.jpg"
+  },
+  {
+    "artist": "Nilüfer Yanya",
+    "album": "Miss Universe",
+    "tier": "growing",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/6c995a96166bd8cf25d80f2e7f918291.jpg"
+  },
+  {
+    "artist": "Overmono",
+    "album": "Good Lies",
+    "tier": "growing",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/570a60c82d6357f842ce39458891b0ce.jpg"
+  },
+  {
+    "artist": "Sudan Archives",
+    "album": "Natural Brown Prom Queen",
+    "tier": "growing",
+    "image": null
+  },
+  {
+    "artist": "Loyle Carner",
+    "album": "Hugo",
+    "tier": "growing",
+    "image": null
+  },
+  {
+    "artist": "Little Simz",
+    "album": "Sometimes I Might Be Introvert",
+    "tier": "growing",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/592ce13b8d7cfee26e13692b3c6985e8.jpg"
+  },
+  {
+    "artist": "Tirzah",
+    "album": "Devotion",
+    "tier": "growing",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/1961645688c754bd7a26bd540b9f7a7d.png"
+  },
+  {
+    "artist": "Caribou",
+    "album": "Suddenly",
+    "tier": "growing",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/6ffd171c118de589c2313ad3c05a5c6b.jpg"
+  },
+  {
+    "artist": "Cleo Sol",
+    "album": "Mother",
+    "tier": "growing",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/16f4043d5592941e6e143c5e6fbd1354.jpg"
+  },
+  {
+    "artist": "Yussef Dayes",
+    "album": "Black Classical Music",
+    "tier": "growing",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/9584ffe50baec06ee48df59412dd7d04.jpg"
+  },
+  {
+    "artist": "Nala Sinephro",
+    "album": "Space 1.8",
+    "tier": "obscure",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/f208c5b5995f360cb0a492880372f0fd.jpg"
+  },
+  {
+    "artist": "Loraine James",
+    "album": "Reflection",
+    "tier": "obscure",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/3d3b3f02df49e3e7d399cf2b818a78a9.jpg"
+  },
+  {
+    "artist": "Space Afrika",
+    "album": "Honest Labour",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Iceboy Violet",
+    "album": "The Vanity Project",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Ana Roxanne",
+    "album": "Because of a Flower",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Patricia Brennan",
+    "album": "Maquishti",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Circuit des Yeux",
+    "album": "-io",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Klein",
+    "album": "Lifetime",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Actress",
+    "album": "Splazsh",
+    "tier": "obscure",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/3a81adfb183548d7a7c8d5324573f0fa.png"
+  },
+  {
+    "artist": "Julia Reidy",
+    "album": "Vanish",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Ellen Arkbro",
+    "album": "CHORDS",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "claire rousay",
+    "album": "a heavenly touch",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Aho Ssan",
+    "album": "Rhizomes",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Ex-Easter Island Head",
+    "album": "Norther",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Grouper",
+    "album": "Ruins",
+    "tier": "obscure",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/0a71c53e645e445cc42d69db09a5679c.png"
+  }
 ]
