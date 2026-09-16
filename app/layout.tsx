@@ -15,7 +15,7 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Nobody You Know",
+  title: "Album Discovery",
   description:
     "Tell it what you're doing. It sends you somewhere strange, with a reason attached.",
 };

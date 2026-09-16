@@ -8,7 +8,7 @@ const ACTIVITIES = [
   "driving",
   "making breakfast",
   "cleaning the house",
-  "bath time",
+  "hanging with kids",
   "friends over",
   "on the water",
   "working",
@@ -91,7 +91,7 @@ export default function RecommendForm() {
   return (
     <div className="mx-auto w-full max-w-2xl px-4 pb-24 pt-10 sm:pt-16">
       <header className="mb-10 space-y-3 text-center">
-        <h1 className="font-display text-4xl italic text-paper sm:text-5xl">Nobody You Know</h1>
+        <h1 className="font-display text-4xl italic text-paper sm:text-5xl">Album Discovery</h1>
         <p className="mx-auto max-w-md text-sm text-paper/60">
           Tell it what you&apos;re doing. It sends you somewhere strange, with a reason attached —
           not another playlist built to keep you comfortable.
