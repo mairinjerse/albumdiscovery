@@ -1,202 +1,272 @@
 [
   {
-    "artist": "Nala Sinephro",
-    "album": "Space 1.8",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/f208c5b5995f360cb0a492880372f0fd.jpg"
+    "artist": "Taylor Swift",
+    "album": "1989",
+    "tier": "mainstream",
+    "image": null
   },
   {
-    "artist": "Alice Coltrane",
-    "album": "Journey in Satchidananda",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/e926e3986f1d00dc3d2b5536b80414b5.jpg"
+    "artist": "Beyoncé",
+    "album": "Renaissance",
+    "tier": "mainstream",
+    "image": null
   },
   {
-    "artist": "Floating Points",
-    "album": "Promises",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/e834b2176d7592462feb0a5dd583a206.jpg"
+    "artist": "Kendrick Lamar",
+    "album": "good kid, m.A.A.d city",
+    "tier": "mainstream",
+    "image": null
   },
   {
-    "artist": "Kamasi Washington",
-    "album": "The Epic",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/e31e35a94208561b1c2b0dca53beaf56.jpg"
+    "artist": "Adele",
+    "album": "25",
+    "tier": "mainstream",
+    "image": null
   },
   {
-    "artist": "Sault",
-    "album": "Untitled (Black Is)",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/ebaf50a931e84c5264c1b85408259830.jpg"
+    "artist": "Drake",
+    "album": "Take Care",
+    "tier": "mainstream",
+    "image": null
   },
   {
-    "artist": "Moses Sumney",
-    "album": "Grae",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/c8c16e25a223990068cdea69d46e3fe2.jpg"
+    "artist": "Billie Eilish",
+    "album": "When We All Fall Asleep, Where Do We Go?",
+    "tier": "mainstream",
+    "image": null
   },
   {
-    "artist": "Arthur Russell",
-    "album": "World of Echo",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/b36a65a78aa0d0b27cb8c83b2e5cd4e6.png"
+    "artist": "The Beatles",
+    "album": "Abbey Road",
+    "tier": "mainstream",
+    "image": null
   },
   {
-    "artist": "Jai Paul",
-    "album": "Leak 04-13 (Bait Ones)",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/6ee602d5e4d9f0640db87f0841ad3be5.jpg"
+    "artist": "Fleetwood Mac",
+    "album": "Rumours",
+    "tier": "mainstream",
+    "image": null
   },
   {
-    "artist": "Grouper",
-    "album": "Ruins",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/0a71c53e645e445cc42d69db09a5679c.png"
+    "artist": "Michael Jackson",
+    "album": "Thriller",
+    "tier": "mainstream",
+    "image": null
   },
   {
-    "artist": "Sufjan Stevens",
-    "album": "Carrie & Lowell",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/7568c8fa48cc4fb6cf688fe89161f8a5.png"
+    "artist": "Radiohead",
+    "album": "OK Computer",
+    "tier": "mainstream",
+    "image": null
   },
   {
-    "artist": "Bon Iver",
-    "album": "22, A Million",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/cd5a54c0665691d78477d301755d7706.jpg"
+    "artist": "Coldplay",
+    "album": "A Rush of Blood to the Head",
+    "tier": "mainstream",
+    "image": null
   },
   {
-    "artist": "Fka Twigs",
-    "album": "Magdalene",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/38d948783315f9d1b34d182944213ce3.jpg"
+    "artist": "Rihanna",
+    "album": "Anti",
+    "tier": "mainstream",
+    "image": null
   },
   {
-    "artist": "Little Simz",
-    "album": "Sometimes I Might Be Introvert",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/592ce13b8d7cfee26e13692b3c6985e8.jpg"
+    "artist": "Ed Sheeran",
+    "album": "÷ (Divide)",
+    "tier": "mainstream",
+    "image": null
   },
   {
-    "artist": "Danny Brown",
-    "album": "Atrocity Exhibition",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/7288ec5442a34c3583f9cb38d38595ee.jpg"
+    "artist": "Amy Winehouse",
+    "album": "Back to Black",
+    "tier": "mainstream",
+    "image": null
   },
   {
-    "artist": "Death Grips",
-    "album": "The Money Store",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/30ef0d3d35720910529fe026a2d2fe7c.jpg"
+    "artist": "Daft Punk",
+    "album": "Random Access Memories",
+    "tier": "mainstream",
+    "image": null
   },
   {
-    "artist": "Aphex Twin",
-    "album": "Selected Ambient Works 85-92",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/36307d33d9e5025c8f4564748e17a5f8.jpg"
+    "artist": "Mk.gee",
+    "album": "Two Star & The Dream Police",
+    "tier": "growing",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/4bb223c47d37d3ec76eddbfc7cb87b1a.jpg"
   },
   {
-    "artist": "Boards of Canada",
-    "album": "Music Has the Right to Children",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/5964ceac5b219e3ae5e2242f7a5d3c96.jpg"
+    "artist": "Fontaines D.C.",
+    "album": "Skinty Fia",
+    "tier": "growing",
+    "image": null
   },
   {
-    "artist": "Burial",
-    "album": "Untrue",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/2c7332bc861d406a80c13f0e69d4ba7f.png"
+    "artist": "Wet Leg",
+    "album": "Wet Leg",
+    "tier": "growing",
+    "image": null
   },
   {
-    "artist": "Jamie xx",
-    "album": "In Colour",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/83e49ea6cea3d9418ab3368af6052097.png"
+    "artist": "Black Country, New Road",
+    "album": "Ants From Up There",
+    "tier": "growing",
+    "image": null
   },
   {
-    "artist": "Caribou",
-    "album": "Suddenly",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/6ffd171c118de589c2313ad3c05a5c6b.jpg"
+    "artist": "Ezra Collective",
+    "album": "Where I'm Meant to Be",
+    "tier": "growing",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/cd584495ef8336d06f7961522ab2b4a2.jpg"
   },
   {
-    "artist": "Tirzah",
-    "album": "Devotion",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/1961645688c754bd7a26bd540b9f7a7d.png"
+    "artist": "Yaeji",
+    "album": "With a Hammer",
+    "tier": "growing",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/1df9c4d71653f3bb17d6f3a13913de52.jpg"
   },
   {
     "artist": "Nilüfer Yanya",
     "album": "Miss Universe",
+    "tier": "growing",
     "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/6c995a96166bd8cf25d80f2e7f918291.jpg"
   },
   {
-    "artist": "Big Thief",
-    "album": "U.F.O.F.",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/e406f4190982b1db943f47076a3c4f28.jpg"
+    "artist": "Overmono",
+    "album": "Good Lies",
+    "tier": "growing",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/570a60c82d6357f842ce39458891b0ce.jpg"
   },
   {
-    "artist": "Adrianne Lenker",
-    "album": "songs",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/746436fb5abd430a4e684eaeee4f1aff.jpg"
+    "artist": "Sudan Archives",
+    "album": "Natural Brown Prom Queen",
+    "tier": "growing",
+    "image": null
   },
   {
-    "artist": "Phoebe Bridgers",
-    "album": "Punisher",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/5da7715b90330903da9116d247a59378.png"
+    "artist": "Loyle Carner",
+    "album": "Hugo",
+    "tier": "growing",
+    "image": null
   },
   {
-    "artist": "Angel Olsen",
-    "album": "All Mirrors",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/abd51ea7d902b578144a6d71bb09e361.jpg"
+    "artist": "Little Simz",
+    "album": "Sometimes I Might Be Introvert",
+    "tier": "growing",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/592ce13b8d7cfee26e13692b3c6985e8.jpg"
   },
   {
-    "artist": "Weyes Blood",
-    "album": "Titanic Rising",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/463b22f2004e52c747f0ca1607860e5f.png"
+    "artist": "Tirzah",
+    "album": "Devotion",
+    "tier": "growing",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/1961645688c754bd7a26bd540b9f7a7d.png"
+  },
+  {
+    "artist": "Caribou",
+    "album": "Suddenly",
+    "tier": "growing",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/6ffd171c118de589c2313ad3c05a5c6b.jpg"
   },
   {
     "artist": "Cleo Sol",
     "album": "Mother",
+    "tier": "growing",
     "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/16f4043d5592941e6e143c5e6fbd1354.jpg"
   },
   {
     "artist": "Yussef Dayes",
     "album": "Black Classical Music",
+    "tier": "growing",
     "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/9584ffe50baec06ee48df59412dd7d04.jpg"
   },
   {
-    "artist": "Shabaka Hutchings",
-    "album": "Afrikan Culture",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/23e028f3b376e85347d96c31fecb5178.jpg"
-  },
-  {
-    "artist": "Ezra Collective",
-    "album": "Where I'm Meant to Be",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/cd584495ef8336d06f7961522ab2b4a2.jpg"
-  },
-  {
-    "artist": "Bicep",
-    "album": "Bicep",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/4aca615f362283d7b6126418e0c2b850.jpg"
-  },
-  {
-    "artist": "Overmono",
-    "album": "Good Lies",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/570a60c82d6357f842ce39458891b0ce.jpg"
-  },
-  {
-    "artist": "Roisin Murphy",
-    "album": "Hit Parade",
-    "image": null
-  },
-  {
-    "artist": "Jessie Ware",
-    "album": "What's Your Pleasure?",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/501f8aaeaffe46ff586df7806847a3a7.png"
-  },
-  {
-    "artist": "Khruangbin",
-    "album": "The Universe Smiles Upon You",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/846faf6966ea715e2bd8be1afd00a4f3.jpg"
-  },
-  {
-    "artist": "Mk.gee",
-    "album": "Two Star & The Dream Police",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/4bb223c47d37d3ec76eddbfc7cb87b1a.jpg"
-  },
-  {
-    "artist": "Yaeji",
-    "album": "With a Hammer",
-    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/1df9c4d71653f3bb17d6f3a13913de52.jpg"
+    "artist": "Nala Sinephro",
+    "album": "Space 1.8",
+    "tier": "obscure",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/f208c5b5995f360cb0a492880372f0fd.jpg"
   },
   {
     "artist": "Loraine James",
     "album": "Reflection",
+    "tier": "obscure",
     "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/3d3b3f02df49e3e7d399cf2b818a78a9.jpg"
+  },
+  {
+    "artist": "Space Afrika",
+    "album": "Honest Labour",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Iceboy Violet",
+    "album": "The Vanity Project",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Ana Roxanne",
+    "album": "Because of a Flower",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Patricia Brennan",
+    "album": "Maquishti",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Circuit des Yeux",
+    "album": "-io",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Klein",
+    "album": "Lifetime",
+    "tier": "obscure",
+    "image": null
   },
   {
     "artist": "Actress",
     "album": "Splazsh",
+    "tier": "obscure",
     "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/3a81adfb183548d7a7c8d5324573f0fa.png"
+  },
+  {
+    "artist": "Julia Reidy",
+    "album": "Vanish",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Ellen Arkbro",
+    "album": "CHORDS",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "claire rousay",
+    "album": "a heavenly touch",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Aho Ssan",
+    "album": "Rhizomes",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Ex-Easter Island Head",
+    "album": "Norther",
+    "tier": "obscure",
+    "image": null
+  },
+  {
+    "artist": "Grouper",
+    "album": "Ruins",
+    "tier": "obscure",
+    "image": "https://lastfm-img.freetls.fastly.net/i/u/300x300/0a71c53e645e445cc42d69db09a5679c.png"
   }
 ]

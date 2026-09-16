@@ -1,4 +1,5 @@
 import covers from "@/data/covers.json";
+import { spotifySearchUrl } from "@/lib/spotify";
 
 interface Cover {
   artist: string;
@@ -9,26 +10,19 @@ interface Cover {
 const albums = covers as Cover[];
 
 function Tile({ artist, album, image }: Cover) {
-  if (image) {
-    return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        src={image}
-        alt={`${album} by ${artist}`}
-        title={`${artist} — ${album}`}
-        className="h-24 w-24 shrink-0 rounded-sm object-cover sm:h-32 sm:w-32"
-        loading="lazy"
-      />
-    );
-  }
-
-  const hue = Math.abs(hash(artist + album)) % 360;
-  return (
+  const inner = image ? (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={image}
+      alt={`${album} by ${artist}`}
+      className="h-24 w-24 shrink-0 rounded-sm object-cover sm:h-32 sm:w-32"
+      loading="lazy"
+    />
+  ) : (
     <div
-      title={`${artist} — ${album}`}
       className="flex h-24 w-24 shrink-0 flex-col justify-end rounded-sm p-2 sm:h-32 sm:w-32"
       style={{
-        background: `linear-gradient(160deg, hsl(${hue} 35% 18%), hsl(${hue} 30% 9%))`,
+        background: `linear-gradient(160deg, hsl(${hue(artist + album)} 35% 18%), hsl(${hue(artist + album)} 30% 9%))`,
       }}
     >
       <span className="line-clamp-2 font-display text-[10px] italic leading-tight text-paper/70">
@@ -36,15 +30,27 @@ function Tile({ artist, album, image }: Cover) {
       </span>
     </div>
   );
+
+  return (
+    <a
+      href={spotifySearchUrl(artist, album)}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={`${artist} — ${album}`}
+      className="shrink-0 transition hover:opacity-80"
+    >
+      {inner}
+    </a>
+  );
 }
 
-function hash(str: string): number {
+function hue(str: string): number {
   let h = 0;
   for (let i = 0; i < str.length; i++) {
     h = (h << 5) - h + str.charCodeAt(i);
     h |= 0;
   }
-  return h;
+  return Math.abs(h) % 360;
 }
 
 export default function CoverStrip() {

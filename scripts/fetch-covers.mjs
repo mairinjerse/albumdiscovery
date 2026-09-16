@@ -3,6 +3,9 @@
 // the curated list changes — the site does not call this at request time.
 //
 // Usage: LASTFM_API_KEY=xxxx node scripts/fetch-covers.mjs
+// Add --force to re-fetch entries that already have an image (default
+// behavior skips them, so re-running after adding new albums only hits
+// Last.fm for the new/missing ones).
 
 import { readFile, writeFile } from "node:fs/promises";
 
@@ -11,6 +14,8 @@ if (!apiKey) {
   console.error("LASTFM_API_KEY is required");
   process.exit(1);
 }
+
+const force = process.argv.includes("--force");
 
 const path = new URL("../data/covers.json", import.meta.url);
 const albums = JSON.parse(await readFile(path, "utf-8"));
@@ -33,6 +38,10 @@ async function fetchCover(artist, album) {
 
 const out = [];
 for (const entry of albums) {
+  if (entry.image && !force) {
+    out.push(entry);
+    continue;
+  }
   process.stdout.write(`${entry.artist} - ${entry.album} ... `);
   try {
     const image = await fetchCover(entry.artist, entry.album);
