@@ -1,4 +1,4 @@
-# Nobody You Know
+# Album Discovery
 
 Tell it what you're doing. It suggests artists you probably haven't heard,
 each with a reason, and a link to open them in Spotify.
