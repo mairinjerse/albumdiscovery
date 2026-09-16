@@ -60,6 +60,7 @@ function buildUserPrompt(input: RecommendInput, feedback?: string): string {
   const lines: string[] = [];
   lines.push(`What they're doing: ${input.activities.join(", ") || "not specified"}`);
   if (input.vibe) lines.push(`More about the vibe: ${input.vibe}`);
+  if (input.energy) lines.push(`Energy they want: ${input.energy}`);
   if (input.referenceAlbum) lines.push(`An album they like, for reference: ${input.referenceAlbum}`);
   if (input.genre) lines.push(`Genre lean, if any: ${input.genre}`);
   lines.push(FAMILIARITY_BRIEF[input.familiarity]);
