@@ -5,6 +5,7 @@ export type Tier = "household" | "well_known" | "growing" | "under_radar" | "obs
 export interface RecommendInput {
   activities: string[];
   vibe?: string;
+  energy?: string;
   familiarity: Familiarity;
   referenceAlbum?: string;
   genre?: string;

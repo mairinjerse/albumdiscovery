@@ -8,11 +8,13 @@ const ACTIVITIES = [
   "driving",
   "making breakfast",
   "cleaning the house",
-  "bath time",
+  "hanging with kids",
   "friends over",
   "on the water",
   "working",
 ];
+
+const ENERGY_OPTIONS = ["slow", "chill", "upbeat", "hype", "energetic"];
 
 const FAMILIARITY_OPTIONS: { value: Familiarity; label: string }[] = [
   { value: "mainstream", label: "Mainstream" },
@@ -30,6 +32,7 @@ const LOADING_LINES = [
 export default function RecommendForm() {
   const [activities, setActivities] = useState<string[]>([]);
   const [vibe, setVibe] = useState("");
+  const [energy, setEnergy] = useState<string | null>(null);
   const [familiarity, setFamiliarity] = useState<Familiarity>("on_the_rise");
   const [referenceAlbum, setReferenceAlbum] = useState("");
   const [genre, setGenre] = useState("");
@@ -41,6 +44,10 @@ export default function RecommendForm() {
 
   function toggleActivity(a: string) {
     setActivities((prev) => (prev.includes(a) ? prev.filter((x) => x !== a) : [...prev, a]));
+  }
+
+  function toggleEnergy(e: string) {
+    setEnergy((prev) => (prev === e ? null : e));
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -67,6 +74,7 @@ export default function RecommendForm() {
         body: JSON.stringify({
           activities,
           vibe: vibe.trim() || undefined,
+          energy: energy ?? undefined,
           familiarity,
           referenceAlbum: referenceAlbum.trim() || undefined,
           genre: genre.trim() || undefined,
@@ -91,7 +99,7 @@ export default function RecommendForm() {
   return (
     <div className="mx-auto w-full max-w-2xl px-4 pb-24 pt-10 sm:pt-16">
       <header className="mb-10 space-y-3 text-center">
-        <h1 className="font-display text-4xl italic text-paper sm:text-5xl">Nobody You Know</h1>
+        <h1 className="font-display text-4xl italic text-paper sm:text-5xl">Album Discovery</h1>
         <p className="mx-auto max-w-md text-sm text-paper/60">
           Tell it what you&apos;re doing. It sends you somewhere strange, with a reason attached —
           not another playlist built to keep you comfortable.
@@ -135,6 +143,31 @@ export default function RecommendForm() {
             className="w-full rounded-md border border-paper/20 bg-transparent px-4 py-2.5 text-sm text-paper placeholder:text-paper/30 focus:border-ember focus:outline-none"
           />
         </div>
+
+        <fieldset>
+          <legend className="mb-3 text-sm font-medium text-paper/90">
+            What&apos;s the energy? <span className="font-normal text-paper/40">(optional)</span>
+          </legend>
+          <div className="flex flex-wrap gap-2">
+            {ENERGY_OPTIONS.map((e) => {
+              const active = energy === e;
+              return (
+                <button
+                  type="button"
+                  key={e}
+                  onClick={() => toggleEnergy(e)}
+                  className={`rounded-full border px-4 py-2 text-sm capitalize transition ${
+                    active
+                      ? "border-ember bg-ember text-ink"
+                      : "border-paper/20 text-paper/70 hover:border-paper/40"
+                  }`}
+                >
+                  {e}
+                </button>
+              );
+            })}
+          </div>
+        </fieldset>
 
         <fieldset>
           <legend className="mb-3 text-sm font-medium text-paper/90">How known?</legend>
