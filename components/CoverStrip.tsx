@@ -1,15 +1,49 @@
 import covers from "@/data/covers.json";
 import { spotifySearchUrl } from "@/lib/spotify";
+import { TIER_LABEL } from "@/lib/tiers";
+import type { Tier } from "@/lib/types";
 
 interface Cover {
   artist: string;
   album: string;
   image: string | null;
+  lastfmTier?: Tier | null;
+  lastfmListeners?: number | null;
 }
 
 const albums = covers as Cover[];
 
-function Tile({ artist, album, image }: Cover) {
+const TIER_ICON: Record<Tier, string> = {
+  household: "★",
+  well_known: "→",
+  growing: "▲",
+  under_radar: "△",
+  obscure: "○",
+};
+
+const TIER_COLOR: Record<Tier, string> = {
+  household: "text-ember",
+  well_known: "text-paper/50",
+  growing: "text-moss",
+  under_radar: "text-moss/70",
+  obscure: "text-paper/30",
+};
+
+function GrowthBadge({ tier, listeners }: { tier: Tier; listeners: number | null | undefined }) {
+  const listenerText = listeners ? `${listeners.toLocaleString()} listeners on Last.fm` : "Last.fm";
+
+  return (
+    <div
+      className={`flex h-full items-center gap-1 ${TIER_COLOR[tier]}`}
+      title={`${TIER_LABEL[tier]} · ${listenerText}`}
+    >
+      <span className="text-xs leading-none">{TIER_ICON[tier]}</span>
+      <span className="truncate font-body text-[9px] uppercase tracking-wide">{TIER_LABEL[tier]}</span>
+    </div>
+  );
+}
+
+function Tile({ artist, album, image, lastfmTier, lastfmListeners }: Cover) {
   const inner = image ? (
     // eslint-disable-next-line @next/next/no-img-element
     <img
@@ -37,9 +71,12 @@ function Tile({ artist, album, image }: Cover) {
       target="_blank"
       rel="noopener noreferrer"
       title={`${artist} — ${album}`}
-      className="shrink-0 transition hover:opacity-80"
+      className="flex shrink-0 flex-col transition hover:opacity-80"
     >
       {inner}
+      <div className="mt-1 h-4 w-24 sm:w-32">
+        {lastfmTier && <GrowthBadge tier={lastfmTier} listeners={lastfmListeners} />}
+      </div>
     </a>
   );
 }
