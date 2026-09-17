@@ -37,8 +37,10 @@ async function call(params) {
   }
   url.searchParams.set("api_key", apiKey);
   url.searchParams.set("format", "json");
+  if (process.env.DEBUG_LASTFM) console.error("REQ:", url.toString());
   const res = await fetch(url);
   const data = await res.json();
+  if (process.env.DEBUG_LASTFM) console.error("RES:", JSON.stringify(data));
   if (data?.error) throw new Error(data.message ?? `Last.fm error ${data.error}`);
   return data;
 }
