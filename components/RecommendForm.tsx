@@ -101,8 +101,7 @@ export default function RecommendForm() {
       <header className="mb-10 space-y-3 text-center">
         <h1 className="font-display text-4xl italic text-paper sm:text-5xl">Album Discovery</h1>
         <p className="mx-auto max-w-md text-sm text-paper/60">
-          Tell it what you&apos;re doing. It sends you somewhere strange, with a reason attached —
-          not another playlist built to keep you comfortable.
+          Type in what you&apos;re doing, pick a vibe, and we&apos;ll give you a couple options.
         </p>
       </header>
 
