@@ -31,6 +31,7 @@ const LOADING_LINES = [
 
 export default function RecommendForm() {
   const [activities, setActivities] = useState<string[]>([]);
+  const [customActivity, setCustomActivity] = useState("");
   const [vibe, setVibe] = useState("");
   const [energy, setEnergy] = useState<string | null>(null);
   const [familiarity, setFamiliarity] = useState<Familiarity>("on_the_rise");
@@ -52,7 +53,10 @@ export default function RecommendForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (activities.length === 0) {
+    const allActivities = customActivity.trim()
+      ? [...activities, customActivity.trim()]
+      : activities;
+    if (allActivities.length === 0) {
       setError("Pick at least one thing you're doing.");
       return;
     }
@@ -72,7 +76,7 @@ export default function RecommendForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          activities,
+          activities: allActivities,
           vibe: vibe.trim() || undefined,
           energy: energy ?? undefined,
           familiarity,
@@ -128,6 +132,13 @@ export default function RecommendForm() {
               );
             })}
           </div>
+          <input
+            type="text"
+            value={customActivity}
+            onChange={(e) => setCustomActivity(e.target.value)}
+            placeholder="not on the list? type it here"
+            className="mt-3 w-full rounded-md border border-paper/20 bg-transparent px-4 py-2.5 text-sm text-paper placeholder:text-paper/30 focus:border-ember focus:outline-none"
+          />
         </fieldset>
 
         <div>
