@@ -131,14 +131,36 @@ export default function RecommendForm() {
                 </button>
               );
             })}
+            <label
+              className={`inline-flex items-center gap-1.5 rounded-full border border-dashed px-4 py-2 text-sm transition ${
+                customActivity
+                  ? "border-ember/70 text-paper"
+                  : "border-paper/30 text-paper/50 hover:border-paper/50"
+              }`}
+            >
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                className="h-3.5 w-3.5 shrink-0 opacity-60"
+                aria-hidden="true"
+              >
+                <path
+                  d="M13.5 3.5L16.5 6.5L7 16H4V13L13.5 3.5Z"
+                  stroke="currentColor"
+                  strokeWidth="1.3"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <input
+                type="text"
+                value={customActivity}
+                onChange={(e) => setCustomActivity(e.target.value)}
+                placeholder="something else..."
+                size={1}
+                className="w-24 min-w-0 grow bg-transparent placeholder:text-paper/30 focus:outline-none"
+              />
+            </label>
           </div>
-          <input
-            type="text"
-            value={customActivity}
-            onChange={(e) => setCustomActivity(e.target.value)}
-            placeholder="not on the list? type it here"
-            className="mt-3 w-full rounded-md border border-paper/20 bg-transparent px-4 py-2.5 text-sm text-paper placeholder:text-paper/30 focus:border-ember focus:outline-none"
-          />
         </fieldset>
 
         <div>
