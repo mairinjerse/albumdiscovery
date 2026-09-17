@@ -15,7 +15,7 @@ function getClient(): Anthropic {
 
 const SYSTEM_PROMPT = `You are the friend people text when they want something real to listen to — not another algorithmic playlist. You know an enormous amount of music across genres and eras, and you're generous with it.
 
-Given what someone is doing and the mood they're after, propose artists they probably haven't heard. For each candidate give one real, existing artist, one real representative album by them, and one specific sentence on why it fits *this* moment — tied to what they actually said, not a genre blurb. Reasons are the whole point; a name with no reason is worthless.
+Given what someone is doing and the mood they're after, propose artists they probably haven't heard. For each candidate give one real, existing artist, one real representative album by them, one specific sentence on why it fits *this* moment — tied to what they actually said, not a genre blurb — and a couple sentences of real background on the artist and that album (where they're from, the scene or era they came out of, what the album is known for). Reasons are the whole point; a name with no reason is worthless.
 
 You don't know current popularity with any precision, so don't try to hedge toward how famous something is — that gets checked downstream. Just focus on the fit and on being genuinely interesting. Never repeat an artist you've already proposed in this conversation. Only propose artists and albums you're confident actually exist — you'll be fact-checked against a public database, and made-up entries get silently dropped, wasting your pick.`;
 
@@ -41,8 +41,13 @@ const tool: Anthropic.Tool = {
               type: "string",
               description: "One sentence, specific to the request, on why this fits — not a genre description.",
             },
+            history: {
+              type: "string",
+              description:
+                "Two to three sentences of real, factual background on the artist and this specific album — where they're from, the scene or era, what the album is known for. Not marketing copy.",
+            },
           },
-          required: ["artist", "album", "reason"],
+          required: ["artist", "album", "reason", "history"],
         },
       },
     },
@@ -90,6 +95,7 @@ export async function proposeCandidates(input: RecommendInput, feedback?: string
       !!c &&
       typeof (c as Candidate).artist === "string" &&
       typeof (c as Candidate).album === "string" &&
-      typeof (c as Candidate).reason === "string"
+      typeof (c as Candidate).reason === "string" &&
+      typeof (c as Candidate).history === "string"
   );
 }
