@@ -23,8 +23,8 @@ export default function ResultCard({ result }: { result: VerifiedResult }) {
   const hue = Math.abs(hash(result.artist + result.album)) % 360;
 
   return (
-    <article className="flex flex-col overflow-hidden rounded-md border border-paper/10 bg-paper/[0.03] transition hover:border-paper/25">
-      <div className="aspect-square w-full overflow-hidden bg-ink">
+    <article className="flex flex-col overflow-hidden rounded-md border border-paper/10 bg-paper/[0.03] transition hover:border-paper/25 sm:flex-row">
+      <div className="aspect-square w-full shrink-0 overflow-hidden bg-ink sm:h-full sm:w-48">
         {result.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -44,15 +44,22 @@ export default function ResultCard({ result }: { result: VerifiedResult }) {
         )}
       </div>
 
-      <div className="flex flex-1 flex-col gap-3 p-5">
+      <div className="flex flex-1 flex-col gap-4 p-6">
         <div>
-          <h3 className="font-display text-xl leading-tight text-paper">{result.artist}</h3>
-          <p className="font-display text-sm italic leading-tight text-paper/60">{result.album}</p>
+          <h3 className="font-display text-2xl leading-tight text-paper">{result.artist}</h3>
+          <p className="font-display text-base italic leading-tight text-paper/60">{result.album}</p>
         </div>
 
-        <p className="flex-1 text-sm leading-relaxed text-paper/80">{result.reason}</p>
+        <blockquote className="border-l-2 border-ember pl-4 text-base leading-relaxed text-paper">
+          {result.reason}
+        </blockquote>
 
-        <div className="flex items-center justify-between gap-3 pt-1">
+        <div>
+          <p className="mb-1 text-xs font-medium uppercase tracking-wide text-paper/40">The story</p>
+          <p className="text-sm leading-relaxed text-paper/70">{result.history}</p>
+        </div>
+
+        <div className="mt-auto flex items-center justify-between gap-3 pt-2">
           <span className="text-xs uppercase tracking-wide text-paper/40">
             {TIER_LABEL[result.tier]}
           </span>

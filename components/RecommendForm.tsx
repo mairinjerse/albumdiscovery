@@ -232,7 +232,7 @@ export default function RecommendForm() {
       </form>
 
       {results && results.length > 0 && (
-        <div className="mt-16 grid gap-5 sm:grid-cols-2">
+        <div className="mt-16 flex flex-col gap-6">
           {results.map((r) => (
             <ResultCard key={`${r.artist}-${r.album}`} result={r} />
           ))}

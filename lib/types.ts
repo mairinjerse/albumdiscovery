@@ -15,6 +15,7 @@ export interface Candidate {
   artist: string;
   album: string;
   reason: string;
+  history: string;
 }
 
 export interface VerifiedResult extends Candidate {

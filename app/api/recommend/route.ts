@@ -8,8 +8,8 @@ import type { Candidate, RecommendInput, Tier, VerifiedResult } from "@/lib/type
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const MAX_RESULTS = 5;
-const MIN_RESULTS_BEFORE_RETRY = 4;
+const MAX_RESULTS = 2;
+const MIN_RESULTS_BEFORE_RETRY = 2;
 
 async function verifyCandidates(
   candidates: Candidate[],
