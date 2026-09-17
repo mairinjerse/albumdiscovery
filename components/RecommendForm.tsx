@@ -31,6 +31,7 @@ const LOADING_LINES = [
 
 export default function RecommendForm() {
   const [activities, setActivities] = useState<string[]>([]);
+  const [customActivity, setCustomActivity] = useState("");
   const [vibe, setVibe] = useState("");
   const [energy, setEnergy] = useState<string | null>(null);
   const [familiarity, setFamiliarity] = useState<Familiarity>("on_the_rise");
@@ -52,7 +53,10 @@ export default function RecommendForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (activities.length === 0) {
+    const allActivities = customActivity.trim()
+      ? [...activities, customActivity.trim()]
+      : activities;
+    if (allActivities.length === 0) {
       setError("Pick at least one thing you're doing.");
       return;
     }
@@ -72,7 +76,7 @@ export default function RecommendForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          activities,
+          activities: allActivities,
           vibe: vibe.trim() || undefined,
           energy: energy ?? undefined,
           familiarity,
@@ -126,6 +130,35 @@ export default function RecommendForm() {
                 </button>
               );
             })}
+            <label
+              className={`inline-flex items-center gap-1.5 rounded-full border border-dashed px-4 py-2 text-sm transition ${
+                customActivity
+                  ? "border-ember/70 text-paper"
+                  : "border-paper/30 text-paper/50 hover:border-paper/50"
+              }`}
+            >
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                className="h-3.5 w-3.5 shrink-0 opacity-60"
+                aria-hidden="true"
+              >
+                <path
+                  d="M13.5 3.5L16.5 6.5L7 16H4V13L13.5 3.5Z"
+                  stroke="currentColor"
+                  strokeWidth="1.3"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <input
+                type="text"
+                value={customActivity}
+                onChange={(e) => setCustomActivity(e.target.value)}
+                placeholder="something else..."
+                size={1}
+                className="w-24 min-w-0 grow bg-transparent placeholder:text-paper/30 focus:outline-none"
+              />
+            </label>
           </div>
         </fieldset>
 
