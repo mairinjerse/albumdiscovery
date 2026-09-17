@@ -1,57 +1,49 @@
 import covers from "@/data/covers.json";
 import { spotifySearchUrl } from "@/lib/spotify";
+import { TIER_LABEL } from "@/lib/tiers";
+import type { Tier } from "@/lib/types";
 
 interface Cover {
   artist: string;
   album: string;
   image: string | null;
-  trend?: number[] | null;
-  trendTag?: string | null;
+  lastfmTier?: Tier | null;
+  lastfmListeners?: number | null;
 }
 
 const albums = covers as Cover[];
 
-function trendSummary(trend: number[]): { pct: number; points: string } {
-  const max = Math.max(...trend);
-  const min = Math.min(...trend);
-  const span = max - min;
-  const points = trend
-    .map((v, i) => {
-      const x = (i / (trend.length - 1)) * 100;
-      const y = span === 0 ? 10 : 18 - ((v - min) / span) * 16;
-      return `${x.toFixed(1)},${y.toFixed(1)}`;
-    })
-    .join(" ");
+const TIER_ICON: Record<Tier, string> = {
+  household: "★",
+  well_known: "→",
+  growing: "▲",
+  under_radar: "△",
+  obscure: "○",
+};
 
-  const first = trend[0];
-  const last = trend[trend.length - 1];
-  const pct = first > 0 ? Math.round(((last - first) / first) * 100) : last > 0 ? 100 : 0;
+const TIER_COLOR: Record<Tier, string> = {
+  household: "text-ember",
+  well_known: "text-paper/50",
+  growing: "text-moss",
+  under_radar: "text-moss/70",
+  obscure: "text-paper/30",
+};
 
-  return { pct, points };
-}
-
-function Sparkline({ trend, tag }: { trend: number[]; tag: string }) {
-  const { pct, points } = trendSummary(trend);
-  const arrow = pct > 4 ? "▲" : pct < -4 ? "▼" : "→";
+function GrowthBadge({ tier, listeners }: { tier: Tier; listeners: number | null | undefined }) {
+  const listenerText = listeners ? `${listeners.toLocaleString()} listeners on Last.fm` : "Last.fm";
 
   return (
     <div
-      className="flex h-full w-24 items-center gap-1 sm:w-32"
-      title={`${tag} tag, 8-week trend ${pct >= 0 ? "+" : ""}${pct}%`}
+      className={`flex h-full items-center gap-1 ${TIER_COLOR[tier]}`}
+      title={`${TIER_LABEL[tier]} · ${listenerText}`}
     >
-      <svg viewBox="0 0 100 20" preserveAspectRatio="none" className="h-full flex-1 stroke-moss">
-        <polyline points={points} fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-      <span className="shrink-0 font-body text-[9px] tracking-wide text-paper/50">
-        {arrow} {Math.abs(pct)}%
-      </span>
+      <span className="text-xs leading-none">{TIER_ICON[tier]}</span>
+      <span className="truncate font-body text-[9px] uppercase tracking-wide">{TIER_LABEL[tier]}</span>
     </div>
   );
 }
 
-function Tile({ artist, album, image, trend, trendTag }: Cover) {
-  const hasTrend = !!trend && trend.length >= 2 && trend.some((v) => v > 0);
-
+function Tile({ artist, album, image, lastfmTier, lastfmListeners }: Cover) {
   const inner = image ? (
     // eslint-disable-next-line @next/next/no-img-element
     <img
@@ -82,7 +74,9 @@ function Tile({ artist, album, image, trend, trendTag }: Cover) {
       className="flex shrink-0 flex-col transition hover:opacity-80"
     >
       {inner}
-      <div className="mt-1 h-4">{hasTrend && <Sparkline trend={trend!} tag={trendTag ?? "similar"} />}</div>
+      <div className="mt-1 h-4 w-24 sm:w-32">
+        {lastfmTier && <GrowthBadge tier={lastfmTier} listeners={lastfmListeners} />}
+      </div>
     </a>
   );
 }
