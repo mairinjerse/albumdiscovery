@@ -52,20 +52,20 @@ function normalize(name) {
 }
 
 async function topTag(artist) {
-  const data = await call({ method: "artist.gettoptags", artist });
+  const data = await call({ method: "artist.getTopTags", artist });
   const tags = data?.toptags?.tag ?? [];
   return tags[0]?.name ?? null;
 }
 
 async function weeklyChartRanges(tag) {
-  const data = await call({ method: "tag.getweeklychartlist", tag });
+  const data = await call({ method: "tag.getWeeklyChartList", tag });
   const charts = data?.weeklychartlist?.chart ?? [];
   return charts.slice(-WEEKS);
 }
 
 async function weeklyPlaycount(tag, from, to, artist) {
   const data = await call({
-    method: "tag.getweeklyartistchart",
+    method: "tag.getWeeklyArtistChart",
     tag,
     from,
     to,
