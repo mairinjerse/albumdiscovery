@@ -31,17 +31,24 @@ export async function getArtistListeners(artist: string): Promise<number | null>
 }
 
 /**
+ * Confirms the artist+album pair itself exists on Last.fm — an artist can be
+ * real while Claude still invents an album title for them, and the artist-only
+ * check doesn't catch that. Returns null if the album doesn't exist there.
+ *
  * Last.fm artist images have been placeholder graphics for years — album
  * images are the ones worth trusting for the result cards.
  */
-export async function getAlbumImage(artist: string, album: string): Promise<string | null> {
+export async function getAlbumInfo(
+  artist: string,
+  album: string
+): Promise<{ image: string | null } | null> {
   try {
     const data = await call({ method: "album.getinfo", artist, album });
     if (data?.error) return null;
     const images: Array<{ size: string; "#text": string }> = data?.album?.image ?? [];
     const large = images.find((img) => img.size === "extralarge") ?? images.at(-1);
     const src = large?.["#text"];
-    return src && src.length > 0 ? src : null;
+    return { image: src && src.length > 0 ? src : null };
   } catch {
     return null;
   }
