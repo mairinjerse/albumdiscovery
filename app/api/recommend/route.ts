@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { proposeCandidates } from "@/lib/claude";
-import { getAlbumImage, getArtistListeners } from "@/lib/lastfm";
+import { getAlbumInfo, getArtistListeners } from "@/lib/lastfm";
 import { spotifySearchUrl } from "@/lib/spotify";
 import { TIER_LABEL, TIERS_BY_FAMILIARITY, tierForListeners } from "@/lib/tiers";
 import type { Candidate, RecommendInput, Tier, VerifiedResult } from "@/lib/types";
@@ -15,8 +15,8 @@ async function verifyCandidates(
   candidates: Candidate[],
   acceptedTiers: Tier[],
   seenArtists: Set<string>
-): Promise<{ matches: Omit<VerifiedResult, "image">[]; rejected: string[] }> {
-  const matches: Omit<VerifiedResult, "image">[] = [];
+): Promise<{ matches: VerifiedResult[]; rejected: string[] }> {
+  const matches: VerifiedResult[] = [];
   const rejected: string[] = [];
 
   for (const candidate of candidates) {
@@ -36,10 +36,17 @@ async function verifyCandidates(
       continue;
     }
 
+    const albumInfo = await getAlbumInfo(candidate.artist, candidate.album);
+    if (albumInfo == null) {
+      rejected.push(`${candidate.artist} - ${candidate.album} isn't a real album on Last.fm`);
+      continue;
+    }
+
     matches.push({
       ...candidate,
       listeners,
       tier,
+      image: albumInfo.image,
       spotifyUrl: spotifySearchUrl(candidate.artist, candidate.album),
     });
   }
@@ -90,21 +97,14 @@ export async function POST(req: Request) {
     }
   }
 
-  const final = matches.slice(0, MAX_RESULTS);
+  const results = matches.slice(0, MAX_RESULTS);
 
-  if (final.length === 0) {
+  if (results.length === 0) {
     return NextResponse.json(
       { error: "Nothing came back that checked out. Try loosening the request." },
       { status: 502 }
     );
   }
-
-  const results: VerifiedResult[] = await Promise.all(
-    final.map(async (m) => ({
-      ...m,
-      image: await getAlbumImage(m.artist, m.album),
-    }))
-  );
 
   return NextResponse.json({ results });
 }

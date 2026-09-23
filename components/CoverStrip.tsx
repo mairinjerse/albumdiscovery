@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import covers from "@/data/covers.json";
 import { spotifySearchUrl } from "@/lib/spotify";
 import { TIER_LABEL } from "@/lib/tiers";
@@ -90,8 +93,30 @@ function hue(str: string): number {
   return Math.abs(h) % 360;
 }
 
+const STRIP_SIZE = 30;
+
+function pickRandom<T>(pool: T[], count: number): T[] {
+  const shuffled = [...pool];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled.slice(0, count);
+}
+
 export default function CoverStrip() {
-  const doubled = [...albums, ...albums];
+  // Start with the first STRIP_SIZE in fixed order so server and client
+  // render the same markup on hydration, then shuffle once mounted — every
+  // page load ends up with a different random slice of the full pool.
+  const [selection, setSelection] = useState<Cover[]>(() =>
+    albums.slice(0, Math.min(STRIP_SIZE, albums.length))
+  );
+
+  useEffect(() => {
+    setSelection(pickRandom(albums, Math.min(STRIP_SIZE, albums.length)));
+  }, []);
+
+  const doubled = [...selection, ...selection];
 
   return (
     <div className="relative w-full overflow-hidden border-b border-paper/10">
